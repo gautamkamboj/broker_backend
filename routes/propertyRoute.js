@@ -7,7 +7,7 @@ const router= express.Router();
 const upload = multer({ dest: 'uploads/' }); // Specify the temporary upload directory
 
 router.post("/create",authMiddleware,upload.array('images', 10),createProperty);
-router.get("/list",authMiddleware,listProperty)
+router.get("/list",listProperty)
 router.get("/myListing",authMiddleware,userProperty)
 router.get("/search/:id",authMiddleware, searchProperties)
 router.delete("/:id",authMiddleware,deleteProperty)
